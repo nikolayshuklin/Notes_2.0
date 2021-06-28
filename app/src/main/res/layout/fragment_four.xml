@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#55AAAA00"
-    tools:context=".FragmentFour">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#79D5F4F1"
+    tools:context=".FragmentNote">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:gravity="end|bottom"
-        android:text="Fragment Four" />
+        android:text="@string/title_note"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/notes_container"/>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/nested_container"
+        android:id="@+id/notes_container"
         android:layout_width="match_parent"
-        android:layout_height="400dp" />
-</FrameLayout>
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

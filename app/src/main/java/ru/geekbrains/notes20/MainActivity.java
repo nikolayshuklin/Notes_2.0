@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
-import static androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -33,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.container, new FragmentFour(), "FragmentFour")
+                .add(R.id.container, new FragmentNote(), "FragmentFour")
                 .addToBackStack(null)
                 .commit();
 

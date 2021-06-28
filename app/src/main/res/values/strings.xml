@@ -5,4 +5,5 @@
     <string name="option_one">Все заметки</string>
     <string name="option_two">Избранные заметки</string>
     <string name="option_three">О приложении</string>
+    <string name="title_note">Title Note</string>
 </resources>
