@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.container, new FragmentThree(), "FragmentThree")
+                .add(R.id.container, new FragmentInfo(), "FragmentThree")
                 .addToBackStack(null)
                 .commit();
 
@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         Fragment fragment = getSupportFragmentManager().findFragmentByTag("FragmentThree");
 
-        if (fragment instanceof FragmentThree) {
-            ((FragmentThree)fragment).doSomethingUseful();
+        if (fragment instanceof FragmentInfo) {
+            ((FragmentInfo)fragment).doSomethingUseful();
         }
 
 //        getSupportFragmentManager()

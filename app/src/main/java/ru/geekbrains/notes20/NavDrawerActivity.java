@@ -8,7 +8,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
@@ -61,7 +60,7 @@ public class NavDrawerActivity extends AppCompatActivity {
                 if (item.getItemId() == R.id.option_three) {
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.container, new FragmentThree())
+                            .replace(R.id.container, new FragmentInfo())
                             .commit();
                     return true;
                 }

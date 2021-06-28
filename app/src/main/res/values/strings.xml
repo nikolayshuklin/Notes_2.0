@@ -6,4 +6,7 @@
     <string name="option_two">Избранные заметки</string>
     <string name="option_three">О приложении</string>
     <string name="title_note">Title Note</string>
+    <string name="app_info">Приложение \"Заметки\"\n *** NN ***\n  @2021</string>
+    <string name="note_text">Текст записки</string>
+    <string name="image_note">https://pixabay.com/images/id-2389219/</string>
 </resources>

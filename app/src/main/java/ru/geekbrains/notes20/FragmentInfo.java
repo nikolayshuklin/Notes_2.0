@@ -7,14 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentThree#newInstance} factory method to
+ * Use the {@link FragmentInfo#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentThree extends Fragment {
+public class FragmentInfo extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +24,7 @@ public class FragmentThree extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FragmentThree() {
+    public FragmentInfo() {
         // Required empty public constructor
     }
 
@@ -38,8 +37,8 @@ public class FragmentThree extends Fragment {
      * @return A new instance of fragment FragmentThree.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentThree newInstance(String param1, String param2) {
-        FragmentThree fragment = new FragmentThree();
+    public static FragmentInfo newInstance(String param1, String param2) {
+        FragmentInfo fragment = new FragmentInfo();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,7 +59,7 @@ public class FragmentThree extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_three, container, false);
+        return inflater.inflate(R.layout.fragment_info, container, false);
     }
 
     public void doSomethingUseful() {
@@ -76,6 +75,5 @@ public class FragmentThree extends Fragment {
     public void onStart() {
         super.onStart();
 
-        Toast.makeText(requireContext(), "I'am the fragment!", Toast.LENGTH_LONG).show();
     }
 }

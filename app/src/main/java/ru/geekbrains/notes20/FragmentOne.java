@@ -2,11 +2,22 @@ package ru.geekbrains.notes20;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,6 +56,7 @@ public class FragmentOne extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+    private NotesRepository repository = NotesRepositoryImpl.INSTANCE;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,5 +72,33 @@ public class FragmentOne extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_one, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        LinearLayout containerView = view.findViewById(R.id.notes_container);
+
+        List<Note> notes = repository.getNotes();
+
+        for (Note note: notes) {
+
+            View itemView = LayoutInflater.from(requireContext()).inflate(R.layout.fragment_note, containerView, false);
+
+            ImageView image = itemView.findViewById(R.id.image);
+
+            TextView title = itemView.findViewById(R.id.title);
+
+            title.setText(note.getTitle());
+
+            Glide
+                    .with(this)
+                    .load(note.getUrl())
+                    .centerCrop()
+                    .into(image);
+
+            containerView.addView(itemView);
+        }
     }
 }
